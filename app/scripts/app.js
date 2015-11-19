@@ -1,12 +1,3 @@
-'use strict';
-
-/**
- * @ngdoc overview
- * @name slotsApp
- * @description
- * # slotsApp
- *
- * Main module of the application.
- */
-angular
-  .module('slotsApp', []);
+var machine = new SlotMachine('#machine');
+// machine.spin();
+machine.startup();
