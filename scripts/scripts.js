@@ -1,0 +1,1 @@
+var machine=new SlotMachine("#machine");machine.startup();
