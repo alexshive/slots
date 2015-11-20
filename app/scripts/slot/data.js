@@ -3,9 +3,12 @@ SlotMachine.prototype.getData = function() {
 	this.prizes = ['coffee', 'tea', 'espresso'];
 	this.itemsPerSlot = 20;
 	this.numberOfSlots = 3;
+	this.slotSpeed = 1/10; // seconds
 
 	this.slotPosition = [];
 	this.slotRun = [];
+
+	this.slotIndex = []; // holds the index of the slotsItem during spin
 
 	this.slotsItem = [
 		{ id: 1, slotId: 1, name: 'coffee maker' }, 
