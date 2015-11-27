@@ -1,8 +1,8 @@
 SlotMachine.prototype.designMachine = function() {
-	var _this = this;
+	var parent = this;
 	this.slots = [];
 	if(this.machine) {
-		var row = $('<div class="row currentRow" />');
+		var row = $('<div class="currentRow" />');
 		for (var i = 0; i < this.slotData.length; i++) {
 			var slot = this.slotData[i];
 			var slotDiv = $('<div class="slot col-sm-4" />');
@@ -11,7 +11,7 @@ SlotMachine.prototype.designMachine = function() {
 				if(j === slot.length - 1) {
 					currentRowClass = 'current';
 				}
-				var slotItem = $('<span class="col-sm-12 text-center ' + currentRowClass + '">' + slot[j].name + '</span>');
+				var slotItem = $('<span class="col-sm-12 text-center ' + currentRowClass + '"><strong>' + slot[j].name + '</strong></span>');
 				slotDiv.append(slotItem);
 			}
 			row.append(slotDiv);
@@ -19,15 +19,18 @@ SlotMachine.prototype.designMachine = function() {
 		}
 		this.machine.append(row);
 
-		this.spinButton = $('<button class="btn btn-primary">SPIN</button>').on('click',function() {
-			_this.spin();
+		this.spinButton = $('<button class="btn btn-block btn-primary">SPIN</button>').on('click',function() {
+			parent.spin();
+			parent.spinButton.hide();
 		});
-		this.machine.append(this.spinButton);
 
-		this.stopButton = $('<button class="btn btn-default">STOP</button>').on('click',function() {
-			_this.stop();
+		this.stopButton = $('<button class="btn btn-block btn-default">STOP</button>').on('click',function() {
+			parent.stop();
+			parent.stopButton.hide();
+			parent.spinButton.show();
 		});
 		this.machine.append(this.stopButton);
+		this.machine.append(this.spinButton);
 	}
 
 	this.ready = true;

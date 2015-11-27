@@ -19,7 +19,7 @@ SlotMachine.prototype.getData = function() {
 		{ id: 2, slotId: 3, name: 'loose tea' }, 
 		{ id: 3, slotId: 1, name: 'espresso machine' }, 
 		{ id: 3, slotId: 2, name: 'espresso tamper' }, 
-		{ id: 3, slotId: 3, name: 'ground espresso beans' }
+		{ id: 3, slotId: 3, name: 'espresso beans' }
 	];
 
 	this.slotData = [];
